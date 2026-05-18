@@ -21,5 +21,8 @@
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "oxc.oxfmt"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "oxc.oxfmt"
   }
 }
