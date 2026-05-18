@@ -11,22 +11,42 @@ Phase 9: TanStack Start の学習リポジトリ。
 
 ## 現在の状況
 
-TanStack Start のセットアップが未完了。現在は Vite + React + TanStack Router / TanStack Query の構成になっている。TanStack Start（`@tanstack/start` + Vinxi）のセットアップが必要。
+TanStack Start のセットアップ完了。`pnpm dev` で起動確認済み。
 
 ## 技術スタック（現在）
 
 | パッケージ | 用途 |
 |---|---|
 | `vite` | ビルドツール |
+| `@tanstack/react-start` | フルスタックフレームワーク |
 | `@tanstack/react-router` | ルーティング |
-| `@tanstack/react-query` | データフェッチ・キャッシュ |
 | `react` | UI ライブラリ（v19） |
+| `tailwindcss` | スタイリング |
+| `oxlint` | Linter |
+| `oxfmt` | Formatter |
 
-## TanStack Start セットアップ手順
-
-TanStack Start の公式ドキュメントに沿ってセットアップする。
+## 学習ロードマップ
 
 参考: https://tanstack.com/start/latest
+
+### Day 1: コア概念 + 実装
+- [ ] Execution Model を読む
+- [ ] Code Execution Patterns を読む
+- [ ] Server Functions を読む
+- [ ] `createServerFn` でサーバー関数を書く
+- [ ] Import Protection を読む
+
+### Day 2: ルーティング + レンダリング
+- [ ] Routing を読む
+- [ ] Middleware を読む
+- [ ] Server Routes を読む
+- [ ] 複数ページ + APIルートを実装する
+- [ ] Selective SSR / SPA Mode / Static Prerendering / ISR を読む
+
+### Day 3: Next.js との比較
+- [ ] Start vs Next.js を読む
+- [ ] Migrate from Next.js を読む
+- [ ] 気づいた違いを整理する
 
 ## 進め方の方針
 
