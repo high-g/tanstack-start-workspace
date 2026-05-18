@@ -7,5 +7,19 @@
   },
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true
+  },
+  "editor.defaultFormatter": "oxc.oxfmt",
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxfmt"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxfmt"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxfmt"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "oxc.oxfmt"
   }
 }
