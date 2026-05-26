@@ -1,14 +1,17 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
+import { greet } from "../utils/greet";
 
-export const Route = createFileRoute('/')({ component: Home })
+export const Route = createFileRoute("/")({
+  loader: () => greet({ data: { name: "test" } }),
+  component: Home,
+});
 
 function Home() {
+  const { message } = Route.useLoaderData();
+
   return (
     <div className="p-8">
-      <h1 className="text-4xl font-bold">Welcome to TanStack Start</h1>
-      <p className="mt-4 text-lg">
-        Edit <code>src/routes/index.tsx</code> to get started.
-      </p>
+      <p className="mt-4 text-lg">{message}</p>
     </div>
-  )
+  );
 }
