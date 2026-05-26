@@ -25,28 +25,38 @@ TanStack Start のセットアップ完了。`pnpm dev` で起動確認済み。
 | `oxlint` | Linter |
 | `oxfmt` | Formatter |
 
-## 学習ロードマップ（2日版）
+## 学習ロードマップ（1日・2〜3時間）
 
 参考: https://tanstack.com/start/latest
 
-### Day 1: コア概念 + サーバー関数を動かす
-- [ ] Execution Model（コードはデフォルトでアイソモーフィック。`createServerFn` 等で制御）
-- [ ] `createServerFn` でサーバー関数を実装（GET/POST、Zodバリデーション、ローダー内呼び出し）
-- [ ] `createServerOnlyFn` / `createClientOnlyFn` / `createIsomorphicFn` を試す
+### Block 1: サーバー関数（45分）
 
-### Day 2: ルーティング + Next.js 比較 + まとめ
-- [ ] Routing（`createFileRoute`、`$param`、`loader`、`<Outlet />`）
-- [ ] Server Routes（APIルートの実装）
-- [ ] Next.js との主な違いを整理して記録
+- [ ] `src/utils/greet.ts` — `createServerFn` + Zod で挨拶を返す
+- [ ] `src/routes/index.tsx` — `loader` から呼んで `useLoaderData` で表示
+- [ ] `src/utils/secret.ts` — `createServerOnlyFn` で `process.env` を返す（コンポから呼んでエラーを確認）
+- [ ] `src/utils/logger.ts` — `createIsomorphicFn` でサーバー/クライアントで出力先が変わるのを確認
 
-## ドキュメントで読む必要があるもの（ドキュメントを読んだことで補足済み）
+### Block 2: ルーティング（45分）
 
-| トピック | 要点 |
+- [ ] `src/routes/about.tsx` — 別ルートを追加、`<Link>` で遷移
+- [ ] `src/routes/posts/$postId.tsx` — 動的ルート、`$postId` をloaderで受け取る
+- [ ] クライアントナビゲーション時にネットワークタブで RPC リクエストを確認
+
+### Block 3: Next.js 比較・まとめ（30分）
+
+- [ ] 気づいた違いをこのファイルに書き足す
+
+## 前提知識メモ（ドキュメントから抽出済み）
+
+| 概念 | 要点 |
 |---|---|
-| Execution Model | 全コードはデフォルトでアイソモーフィック（両環境で動く）。loaderも両環境で実行される |
-| createServerFn | `.handler()` でRPC。`.inputValidator()` でZod対応。GET/POSTどちらも可 |
-| Code Execution Patterns | `createServerFn/OnlyFn/ClientOnlyFn/IsomorphicFn` の使い分け |
-| vs Next.js | Server Actionsと違いGET対応、ミドルウェアが関数単位で設定可、Vercel依存なし |
+| Execution Model | 全コードはデフォルトでアイソモーフィック。`loader` も両環境で実行される |
+| `createServerFn` | `.handler()` でRPC化。`.inputValidator()` でZod対応。GET/POST両対応 |
+| `createServerOnlyFn` | サーバー限定。クライアントで呼ぶとランタイムエラー |
+| `createIsomorphicFn` | 環境ごとに実装を分岐 |
+| vs Next.js Server Actions | Start は GET 対応、ミドルウェアが関数単位、Vercel 依存なし |
+
+## Next.js との違い（実装しながら追記）
 
 ## 進め方の方針
 
