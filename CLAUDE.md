@@ -11,7 +11,7 @@ Phase 9: TanStack Start の学習リポジトリ。
 
 ## 現在の状況
 
-TanStack Start のセットアップ完了。`pnpm dev` で起動確認済み。
+全 Block 完了。`createServerFn` / `createServerOnlyFn` / `createIsomorphicFn` / Server Routes を実装・動作確認済み。
 
 ## 技術スタック（現在）
 
@@ -22,6 +22,7 @@ TanStack Start のセットアップ完了。`pnpm dev` で起動確認済み。
 | `@tanstack/react-router` | ルーティング |
 | `react` | UI ライブラリ（v19） |
 | `tailwindcss` | スタイリング |
+| `zod` | バリデーション |
 | `oxlint` | Linter |
 | `oxfmt` | Formatter |
 
@@ -34,7 +35,7 @@ TanStack Start のセットアップ完了。`pnpm dev` で起動確認済み。
 - [x] `src/utils/greet.ts` — `createServerFn` + Zod で挨拶を返す
 - [x] `src/routes/index.tsx` — `loader` から呼んで `useLoaderData` で表示
 - [x] `src/utils/secret.ts` — `createServerOnlyFn` で `process.env` を返す（コンポから呼んでエラーを確認）
-- [ ] `src/utils/logger.ts` — `createIsomorphicFn` でサーバー/クライアントで出力先が変わるのを確認
+- [x] `src/utils/logger.ts` — `createIsomorphicFn` でサーバー/クライアントで出力先が変わるのを確認
 
 ### Block 2: Next.js 比較・まとめ
 
