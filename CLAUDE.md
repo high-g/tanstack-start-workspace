@@ -63,7 +63,11 @@ Phase 9: TanStack Start の学習リポジトリ。
 | Vender lock-in | なし | Vercel 最適化 |
 | 学習コスト | TanStack Router の延長 | RSC の概念が必要 |
 
-**使い分け：** バックエンドTS+SSRをシンプルにやるなら Start、RSCで細かく制御したいなら Next.js。
+**使い分け：**
+
+- RSC + Client Boundary で細かく挙動を分けたい → Next.js
+- 旧 `getServerSideProps` + SPA 的なノリで開発したい → TanStack Start
+- `loader` + `createServerFn` は `getServerSideProps` より型安全でシンプル。開発体験は向上している。
 
 ## 進め方の方針
 
